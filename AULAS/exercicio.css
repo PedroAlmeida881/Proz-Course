@@ -1,23 +1,66 @@
+/* Estilo geral da página */
 body {
-    margin: 50px;
-    background-color: rgb(0, 187, 156);
-    display: flex; 
-    justify-content: center; 
+    margin: 30px;
+    background-color: rgb(0, 255, 195);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
 }
 
-.container {
-    text-align: center;
-    background-color: white; 
-    padding: 45px;
-    border-radius: 20px;
-} 
+/* Título principal */
+h1 {
+    font-size: 3rem;
+    color: #000;
+    margin-bottom: 20px;
+}
 
+/* Parágrafo de mensagem */
+#mensagem {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+/* Campo de entrada de código */
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Botão de verificação */
 button {
     background-color: black;
     color: white;
-    border: nome;
-    padding: 10px;
-    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* Feedback visual quando o código é válido ou inválido */
+.valido {
+    color: green;
+    font-weight: bold;
+}
+
+.invalido {
+    color: red;
+    font-weight: bold;
 }
