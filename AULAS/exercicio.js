@@ -1,4 +1,12 @@
-function mudarMensagem() {
-    const men= document.getElementById("mensagem");
-    men.innerHTML = "Seja muito bem-vindo ao nosso site! <br> Aproveite!";
+function verificarMensagem() {
+    const veri =document.getElementById("mensagem");
+    const codigoDigitado ="Hulk7";
+    const cod  =document.getElementById("codigo").value;
+    const bot =document.getElementById("botão");
+    if(cod == codigoDigitado) {
+    veri.innerHTML ="Código válido!"
+    }
+    else{
+    veri.innerHTML="ERRO! Código inválido."
+    }
 }
