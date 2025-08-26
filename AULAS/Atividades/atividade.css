@@ -30,8 +30,15 @@ input {
 }
 
 h1 {
-    color: white;
-    text-shadow: 2px 2px 6px black;
+    color: rgb(0, 0, 0);
+    text-shadow: 5px 8px 8px black;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+h2 {
+    color: rgb(255, 255, 255);
     font-size: 18px;
     margin-bottom: 20px;
     transition: opacity 0.5s ease-in-out;
@@ -63,4 +70,5 @@ button:hover {
         opacity: 1;
         transform: scale(1);
     }
+
 }
