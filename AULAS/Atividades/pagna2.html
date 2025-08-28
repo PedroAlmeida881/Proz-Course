@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Títulos do Galo</title>
+</head>
+
+<body>
+    <header>
+        <h1>Títulos do Galão da Massa - Campeonato Brasileiro</h1>
+    </header>
+
+    <h2>Veja a lista abaixo:</h2>
+    <ul>
+        <li onclick="carregarTitulo('1937')">Brasileiro - 1937</li>
+        <li onclick="carregarTitulo('1971')">Brasileiro - 1971</li>
+        <li onclick="carregarTitulo('2021')">Brasileiro - 2021</li>
+    </ul>
+
+    <div id="detalhes"></div>
+
+    <footer>
+        <p>&copy; 2025 Títulos do Clube Atlético Mineiro. Todos os direitos reservados.</p>
+        <p>Telefone: (31) 97465-3289</p>
+        <p><a href="https://www.instagram.com/atletico/" target="_blank">Instagram do Galo</a></p>
+    </footer>
+
+    <script>
+        async function carregarTitulo(ano) {
+            try {
+                document.getElementById("detalhes").innerHTML = "Carregando as informações...";
+
+                await new Promise(resolve => setTimeout(resolve, 200));
+
+                const mensagens = {
+                    "1937": "Campeão da Primeira Liga Nacional, também conhecida como Torneio dos Campeões, organizada pela Federação Brasileira de Futebol (FBF), precursora da CBF.",
+                    "1971": "Campeão do primeiro Campeonato Brasileiro unificado, organizado pela CBF. Vitória histórica sob o comando do técnico Telê Santana.",
+                    "2021": "Conquista após 50 anos, com um elenco forte (Hulk, Nacho Fernández, etc.) e grande campanha.",
+                };
+
+                document.getElementById("detalhes").innerHTML = mensagens[ano] || "Informações não encontradas.";
+            } catch (erro) {
+                document.getElementById("detalhes").innerHTML = "Erro: " + erro.message;
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #000000 60%, #444444);
+        color: white;
+        margin: 0;
+        padding: 0;
+        animation: fadeIn 1.5s ease-in;
+    }
+    
+    header {
+        background-color: #000000;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 3px solid #fff;
+        animation: slideDown 1s ease-out;
+    }
+    
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+        color: #ffffff;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px #444;
+    }
+    
+    h2 {
+        text-align: center;
+        margin-top: 30px;
+        color: #ffffff;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+    
+    li {
+        background-color: #1a1a1a;
+        margin: 10px auto;
+        padding: 15px 25px;
+        width: 250px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s, background-color 0.3s;
+        border: 1px solid #fff;
+    }
+    
+    li:hover {
+        background-color: #ffffff;
+        color: #000000;
+        transform: scale(1.05);
+    }
+    
+    #detalhes {
+        margin: 30px auto;
+        width: 60%;
+        background-color: #2c2c2c;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 1.2em;
+        border: 2px solid #fff;
+        animation: fadeIn 0.8s ease-in;
+    }
+    
+    footer {
+        background-color: #000000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        border-top: 2px solid #fff;
+    }
+    
+    footer a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+    
+    footer a:hover {
+        color: #cccccc;
+    }
+    /* Animações */
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideDown {
+        from {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
