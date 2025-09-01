@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login Animado</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom left, rgb(56, 55, 55), rgb(0, 0, 0), rgb(63, 61, 61));
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px 50px;
+            text-align: center;
+            width: 340px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+            animation: bounceIn 1.2s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(-50px);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.05) translateY(10px);
+            }
+            80% {
+                transform: scale(0.95) translateY(-5px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            text-shadow: 4px 6px 8px rgba(0, 0, 0, 0.7);
+            font-size: 32px;
+            margin-bottom: 25px;
+            opacity: 1;
+            transition: opacity 0.6s ease;
+            min-height: 48px;
+        }
+
+        input {
+            width: 80%;
+            margin: 12px 0;
+            padding: 14px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+            cursor: text;
+        }
+
+        input:focus {
+            border-color: #000;
+            box-shadow: 0 0 10px #000;
+            background-color: #f0f0f0;
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            user-select: none;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: rgb(40, 40, 40);
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        button:active {
+            transform: scale(0.95) rotate(0deg);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Animação da mensagem */
+        .fade-message {
+            animation: fadeInOut 4s ease forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="msg">Login</h1>
+        <input type="text" id="username" placeholder="Digite seu login" autocomplete="off" />
+        <input type="password" id="senha" placeholder="Digite sua senha" autocomplete="off" />
+        <button onclick="verifica()">Entrar</button>
+    </div>
+
+    <script>
+        function verifica() {
+            let nomes = ["Pedro", "Lucas", "Ana"];
+            let senhas = ["123", "1234", "12345"];
+
+            const mensagem = document.getElementById("msg");
+            const name = document.getElementById("username").value.trim();
+            const acesso = document.getElementById("senha").value.trim();
+
+            // Remove classes para reiniciar animação
+            mensagem.classList.remove('fade-message');
+
+            let correto = false;
+            let usuarioLogado = "";
+
+            for (let i = 0; i < nomes.length; i++) {
+                if (name === nomes[i] && acesso === senhas[i]) {
+                    correto = true;
+                    usuarioLogado = nomes[i];
+                    break;
+                }
+            }
+
+            if (correto) {
+                if (usuarioLogado === "Ana") {
+                    mensagem.innerHTML = "✨ Bem-vinda, " + usuarioLogado + "!<br>Redirecionando...";
+                } else {
+                    mensagem.innerHTML = "✨ Bem-vindo, " + usuarioLogado + "!<br>Redirecionando...";
+                }
+
+                mensagem.classList.add('fade-message');
+
+                setTimeout(() => {
+                    window.location.href = "teste2.html";
+                }, 2500);
+            } else {
+                mensagem.innerHTML = "❌ Login ou senha incorretos, tente novamente!";
+                mensagem.classList.add('fade-message');
+
+                setTimeout(() => {
+                    mensagem.innerHTML = "Login";
+                    mensagem.classList.remove('fade-message');
+                }, 4000);
+
+                document.getElementById("username").value = "";
+                document.getElementById("senha").value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
