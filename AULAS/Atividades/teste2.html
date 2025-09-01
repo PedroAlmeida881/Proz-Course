@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Títulos do Galo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #000 60%, #444);
+      color: white;
+      margin: 0;
+      padding: 0;
+      animation: fadeIn 1.5s ease-in;
+    }
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 3px solid #fff;
+      animation: slideDown 1s ease-out;
+    }
+    header h1 { margin: 0; font-size: 2em; color: #fff; text-shadow: 2px 2px #444; }
+    h2, h3 { text-align: center; margin-top: 30px; color: #fff; }
+    ul { list-style: none; padding: 0; text-align: center; }
+    li {
+      background: #1a1a1a; margin: 10px auto;
+      padding: 15px 25px; width: 280px;
+      border-radius: 10px; cursor: pointer;
+      transition: transform .3s, background .3s, color .3s;
+      border: 1px solid #fff;
+    }
+    li:hover { background: #fff; color: #000; transform: scale(1.05); }
+    #detalhes {
+      margin: 30px auto; width: 60%;
+      background: #2c2c2c; padding: 20px;
+      border-radius: 10px; text-align: center;
+      font-size: 1.1em; border: 2px solid #fff;
+      animation: fadeIn .8s ease-in;
+    }
+    footer {
+      background: #000; padding: 20px;
+      text-align: center; margin-top: 40px;
+      border-top: 2px solid #fff;
+    }
+    footer a { color: #fff; text-decoration: none; font-weight: bold; transition: color .3s; }
+    footer a:hover { color: #ccc; }
+    footer img { vertical-align: middle; width: 20px; margin-right: 8px; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Títulos do Galão da Massa - Atlético Mineiro</h1>
+  </header>
+
+  <h2>Veja os principais títulos do Galo:</h2>
+
+  <!-- Nacionais + Internacionais -->
+  <h3>🏆 Nacionais</h3>
+  <ul>
+    <li onclick="carregarTitulo('br1937')">Campeonato Brasileiro – 1937</li>
+    <li onclick="carregarTitulo('br1971')">Campeonato Brasileiro – 1971</li>
+    <li onclick="carregarTitulo('br2021')">Campeonato Brasileiro – 2021</li>
+    <li onclick="carregarTitulo('cd2014')">Copa do Brasil – 2014</li>
+    <li onclick="carregarTitulo('cd2021')">Copa do Brasil – 2021</li>
+    <li onclick="carregarTitulo('sb2022')">Supercopa do Brasil – 2022</li>
+    <li onclick="carregarTitulo('cc1978')">Copa dos Campeões do Brasil – 1978</li>
+    <li onclick="carregarTitulo('sb2B2006')">Campeonato Brasileiro Série B – 2006</li>
+  </ul>
+
+  <h3>🌍 Internacionais</h3>
+  <ul>
+    <li onclick="carregarTitulo('lib2013')">Copa Libertadores – 2013</li>
+    <li onclick="carregarTitulo('recopa2014')">Recopa Sul-Americana – 2014</li>
+    <li onclick="carregarTitulo('conmebol1992')">Copa Conmebol – 1992</li>
+    <li onclick="carregarTitulo('conmebol1997')">Copa Conmebol – 1997</li>
+  </ul>
+
+  <h3>🏅 Estaduais e Regionais</h3>
+  <ul>
+    <li onclick="carregarTitulo('mineiro')">Campeonato Mineiro – 50 títulos (1915–2025)</li>
+    <li onclick="carregarTitulo('tmg')">Taça Minas Gerais – 1975, 1976, 1979, 1986, 1987</li>
+    <li onclick="carregarTitulo('tbht')">Taça BH – 1970, 1971, 1972</li>
+    <li onclick="carregarTitulo('fmftorneio')">Torneio FMF – 1974</li>
+    <li onclick="carregarTitulo('incentivo1993')">Torneio Incentivo Mineiro – 1993</li>
+    <li onclick="carregarTitulo('inicio')">Torneio Início – 1928, 1931, 1932, 1939, 1947, 1949, 1950, 1954</li>
+  </ul>
+
+  <h3>🏘 Municipais e Outros</h3>
+  <ul>
+    <li onclick="carregarTitulo('buenobrandao1914')">Taça Bueno Brandão – 1914</li>
+    <li onclick="carregarTitulo('copabh1959')">Copa Belo Horizonte – 1959</li>
+  </ul>
+
+  <h3>🏆 Torneios Internacionais Amistosos e Troféus</h3>
+  <ul>
+    <li onclick="carregarTitulo('condefenosa1976')">Troféu Conde de Fenosa – 1976</li>
+    <li onclick="carregarTitulo('vigovigo1977')">Troféu Cidade de Vigo – 1977</li>
+    <li onclick="carregarTitulo('costasol1980')">Torneio da Costa do Sol – 1980</li>
+    <li onclick="carregarTitulo('bilbau1982')">Torneio de Bilbau – 1982</li>
+    <li onclick="carregarTitulo('paris1982')">Torneio de Paris – 1982</li>
+    <li onclick="carregarTitulo('berna1983')">Torneio de Berna – 1983</li>
+    <li onclick="carregarTitulo('amsterda1984')">Torneio de Amsterdã – 1984</li>
+    <li onclick="carregarTitulo('carranza1990')">Troféu Ramón de Carranza – 1990</li>
+    <li onclick="carregarTitulo('copacenbh1997')">Copa Centenário de BH – 1997</li>
+    <li onclick="carregarTitulo('copatres1999')">Copa dos Três Continentes – 1999</li>
+    <li onclick="carregarTitulo('floridacup2016')">Florida Cup – 2016</li>
+  </ul>
+
+  <div id="detalhes"></div>
+
+  <footer>
+    <p>&copy; 2025 Títulos do Clube Atlético Mineiro. Todos os direitos reservados.</p>
+    <p>Telefone: (31) 97465‑3289</p>
+    <p>
+      <a href="https://www.instagram.com/atletico/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+        Instagram do Galo
+      </a>
+    </p>
+  </footer>
+
+<script>
+  async function carregarTitulo(id) {
+    const detalhes = document.getElementById("detalhes");
+    detalhes.innerHTML = "Carregando...";
+    detalhes.scrollIntoView({ behavior: "smooth" });
+
+    await new Promise(r => setTimeout(r, 200));
+
+    const mensagens = {
+      "br1937": "🏆 O Galo venceu o Torneio dos Campeões, reconhecido como Campeonato Brasileiro pela CBF. Foi o primeiro título nacional do clube.",
+      "br1971": "🏆 Primeiro Campeonato Brasileiro oficial. Vitória sobre o Botafogo por 1x0 no Maracanã com gol de Dadá Maravilha.",
+      "br2021": "🏆 Após 50 anos, o Galo voltou a conquistar o Brasileirão com uma campanha histórica sob comando de Cuca, com Hulk artilheiro.",
+      "cd2014": "🏆 Galo campeão da Copa do Brasil derrotando o Cruzeiro na final. Destaque para viradas épicas contra Corinthians e Flamengo.",
+      "cd2021": "🏆 Conquista sobre o Athletico-PR na final. Hulk e Keno foram destaques. Galo fez a tríplice coroa nacional.",
+      "sb2022": "🏆 Vitória sobre o Flamengo nos pênaltis garantiu a Supercopa do Brasil. Everson foi o herói defendendo cobranças.",
+      "cc1978": "🏆 Conquista da Copa dos Campeões do Brasil, torneio nacional entre os melhores times estaduais da época.",
+      "sb2B2006": "🏆 Após queda em 2005, o Galo venceu a Série B com apoio da torcida e retornou à elite do futebol brasileiro.",
+      "lib2013": "🌍 Título mais importante da história do Galo! Vitória nos pênaltis contra o Olimpia após campanha histórica. Victor, Ronaldinho e Tardelli foram lendas.",
+      "recopa2014": "🌍 Conquista sobre o Lanús com gol de Luan na prorrogação. Mineirão foi palco da festa alvinegra.",
+      "conmebol1992": "🌍 Primeira Copa Conmebol do Galo. Final contra o Olimpia e título decidido no Mineirão.",
+      "conmebol1997": "🌍 Segunda Copa Conmebol vencida, dessa vez contra o Lanús. Valdir Bigode foi artilheiro.",
+      "mineiro": "🏅 Maior campeão estadual de Minas com 50 títulos. Rivalidade histórica com Cruzeiro e América-MG.",
+      "tmg": "🏅 Conquista da Taça Minas Gerais em 5 oportunidades: 1975, 1976, 1979, 1986 e 1987.",
+      "tbht": "🏅 A Taça BH foi vencida em 1970, 1971 e 1972, com forte presença de jogadores da base.",
+      "fmftorneio": "🏅 O Torneio FMF de 1974 foi mais uma conquista regional do clube, mantendo hegemonia local.",
+      "incentivo1993": "🏅 Torneio regional promovido pela FMF vencido em 1993. Teve como objetivo movimentar o calendário estadual.",
+      "inicio": "🏅 O Torneio Início era disputado em partidas curtas no início da temporada. O Galo venceu 8 edições entre 1928 e 1954.",
+      "buenobrandao1914": "🏘 Um dos primeiros títulos da história do clube, disputado em 1914 contra clubes locais.",
+      "copabh1959": "🏘 Competição disputada em Belo Horizonte. O Galo venceu e reafirmou sua força local.",
+      "condefenosa1976": "🌍 Troféu amistoso disputado na Espanha, vencido em cima do Deportivo La Coruña.",
+      "vigovigo1977": "🌍 Torneio Cidade de Vigo, também na Espanha. Atlético superou equipes locais e europeias.",
+      "costasol1980": "🌍 Disputado na Espanha, o Galo venceu equipes europeias em amistosos internacionais.",
+      "bilbau1982": "🌍 Torneio de Bilbau, vencido após confronto contra o Athletic Bilbao.",
+      "paris1982": "🌍 Torneio de Paris, tradicional competição de verão com clubes europeus. Atlético representou o Brasil.",
+      "berna1983": "🌍 O Galo venceu o Torneio de Berna, na Suíça, reforçando seu prestígio internacional.",
+      "amsterda1984": "🌍 No famoso Torneio de Amsterdã, o Atlético enfrentou Ajax e outros clubes europeus, saindo vencedor.",
+      "carranza1990": "🌍 Importante torneio espanhol disputado em Cádiz. Galo superou grandes clubes da Europa.",
+      "copacenbh1997": "🏘 Torneio em comemoração ao centenário de Belo Horizonte. Atlético foi o campeão da festa.",
+      "copatres1999": "🌍 Torneio amistoso intercontinental com clubes de três continentes. Atlético saiu vencedor.",
+      "floridacup2016": "🌍 Disputado nos EUA, o Galo venceu times internacionais como o Schalke 04 e o Shakhtar Donetsk."
+    };
+
+    detalhes.innerHTML = mensagens[id] || "Informações não encontradas.";
+  }
+</script>   
