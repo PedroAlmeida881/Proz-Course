@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Viajar Mais</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    nav {
+      background: #333;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+
+    .destinos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 300px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    @keyframes shadowPulse {
+      0%, 100% {
+        box-shadow: 0 8px 15px rgba(0, 119, 204, 0.4);
+      }
+      50% {
+        box-shadow: 0 8px 25px rgba(0, 119, 204, 0.8);
+      }
+    }
+
+    .card:hover {
+      animation: shadowPulse 2s infinite;
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0;
+    }
+
+    .card p {
+      padding: 0 15px 20px;
+      font-size: 0.9em;
+    }
+
+    #infoLugar {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 40px auto 0;
+  max-width: 600px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra base */
+}
+
+#infoLugar:hover {
+  animation: shadowPulse 2s infinite;
+  transform: translateY(-5px);
+}
+
+
+
+    footer {
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      background-color: rgba(0,0,0,0.8);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      position: relative;
+      z-index: 2;
+      font-weight: 600;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .destinos {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Viajar Mais</h1>
+    <p>Explore os melhores destinos do mundo</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#destinos">Destinos</a></li>
+    </ul>
+  </nav>
+
+   <section class="section" id="destinos">
+  <div style="display: flex; align-items: center; gap: 15px; justify-content: center; margin-bottom: 30px;">
+    <img src="Imagens/marcador.png" style="width: 30px; height: 30px;" alt="Ícone de marcador">
+    <h2 style="margin: 0;">Escolha um Destino:</h2>
+  </div>
+  <div class="destinos">
+    <div class="card" onclick="mostrarInfo('bh')">
+      <img src="https://media.istockphoto.com/id/2228957435/pt/foto/amusement-park-and-pampulha-lake-at-downtown-belo-horizonte-minas-gerais-brazil.jpg?s=612x612&w=0&k=20&c=5ke5ZgFSYPWkxQGGs4otgokrrrOpTvqXaWOaUc9U3lM=" alt="Belo Horizonte MG">
+      <h3>Belo Horizonte - MG</h3>
+      <p>Conhecida como a capital dos bares e pela Lagoa da Pampulha.</p>
+    </div>
+    <div class="card" onclick="mostrarInfo('santiago')">
+      <img src="https://media.istockphoto.com/id/2177070402/pt/foto/santiago-chile-skyline.jpg?s=612x612&w=0&k=20&c=tq1EUqdBc5RfFZY8wRVS3nbLfE9ohJ3hlXTI3ZBkTEk=" alt="Santiago Chile">
+      <h3>Santiago - Chile</h3>
+      <p>Capital do Chile, famosa pela vista dos Andes e vinícolas.</p>
+    </div>
+    <div class="card" onclick="mostrarInfo('natal')">
+      <img src="https://media.istockphoto.com/id/1350693520/pt/foto/beautiful-aerial-image-of-the-city-of-natal-rio-grande-do-norte.jpg?s=612x612&w=0&k=20&c=Jwfz-toJVXmVsyVpiuoo4UretgDWeVXBu1LMrgCJGEs=" alt="Natal RN">
+      <h3>Natal - RN</h3>
+      <p>Praias lindas e dunas impressionantes no nordeste brasileiro.</p>
+    </div>
+    <div class="card" onclick="mostrarInfo('buenosaires')">
+      <img src="https://media.istockphoto.com/id/2219679043/pt/foto/vibrant-colored-buildings-and-tourists-in-la-boca-buenos-aires-argentina.jpg?s=612x612&w=0&k=20&c=PtW9jnjI9Wj3aHy8wwj2nkcjXS2t-WeM-0wx7zzHlOc=" alt="Buenos Aires Argentina">
+      <h3>Buenos Aires - Argentina</h3>
+      <p>Capital vibrante conhecida por sua cultura, tango e arquitetura europeia.</p>
+    </div>
+  </div>
+</section>
+
+  <div id="infoLugar"></div>
+
+  <footer>
+    <p>&copy; 2025 Viajar Mais. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    async function mostrarInfo(cidade) {
+      const infoLugar = document.getElementById('infoLugar');
+      infoLugar.innerHTML = '<p>Carregando informações...</p>';
+
+      const dados = await fetchDados(cidade);
+
+      infoLugar.innerHTML = `
+        <h2>${dados.nome}</h2>
+        <p>${dados.descricao}</p>
+        <p><strong>População:</strong> ${dados.populacao}</p>
+        <p><strong>Principais atrações:</strong> ${dados.atracoes.join(', ')}</p>
+      `;
+      infoLugar.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function fetchDados(cidade) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          const info = {
+            bh: {
+              nome: 'Belo Horizonte - MG',
+              descricao: 'Belo Horizonte é conhecida por sua arquitetura moderna, culinária rica e a Lagoa da Pampulha, um dos cartões-postais da cidade.',
+              populacao: '2.7 milhões',
+              atracoes: ['Lagoa da Pampulha', 'Mercado Central', 'Praça da Liberdade', 'Museu de Arte da Pampulha']
+            },
+            santiago: {
+              nome: 'Santiago - Chile',
+              descricao: 'Santiago é a capital vibrante do Chile, cercada pelos Andes e conhecida por sua cultura, vinícolas e gastronomia.',
+              populacao: '6.3 milhões',
+              atracoes: ['Cerro San Cristóbal', 'Museu da Memória', 'Palácio de La Moneda', 'Valle Nevado']
+            },
+            natal: {
+              nome: 'Natal - RN',
+              descricao: 'Natal é famosa por suas praias paradisíacas, dunas e forte cultura nordestina, além de ser porta de entrada para o Rio Grande do Norte.',
+              populacao: '890 mil',
+              atracoes: ['Praia de Ponta Negra', 'Forte dos Reis Magos', 'Parque das Dunas', 'Barreira do Inferno']
+            },
+            buenosaires: {
+              nome: 'Buenos Aires - Argentina',
+              descricao: 'Buenos Aires é a capital da Argentina, famosa por sua rica cultura, dança do tango e arquitetura que lembra cidades europeias.',
+              populacao: '3 milhões',
+              atracoes: ['Casa Rosada', 'Caminito', 'Teatro Colón', 'Puerto Madero']
+            }
+          };
+          resolve(info[cidade]);
+        }, 1000);
+      });
+    }
+  </script>
+</body>
+</html>
