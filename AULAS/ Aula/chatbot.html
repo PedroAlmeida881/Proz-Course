@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot por voz</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #4b79a1, #283e51);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chatbot {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            animation: aparecer 0.6s ease-in-out;
+        }
+
+        .chatbot h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        button {
+            background: #4b79a1;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #35516b;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chatbot">
+        <h2> ChatBot por voz</h2>
+        <button onclick="ouvir()">Falar Agora</button>
+    </div>
+
+    <script>
+        const pergunta = "como você está";
+        const resposta = "Estou ótimo! Obrigrado por perguntar.";
+
+        function falar(texto) {
+            const discurso = new SpeechSynthesisUtterance(texto);
+            discurso.lang = "pt-BR";
+            discurso.rate = 2;
+            window.speechSynthesis.speak(discurso);
+        }
+
+        function ouvir() {
+            const reconhecer = new webkitSpeechRecognition();
+            reconhecer.lang = "pt-BR";
+            reconhecer.start();
+            reconhecer.onresult = function (event) {
+                const textoFalado = event.results[0][0].transcript.toLowerCase();
+                if (textoFalado.includes(pergunta)) {
+                    falar(resposta);
+                } else {
+                    falar("Desculpa, eu só entendo a pergunta: Como você está?");
+                }
+            }
+        };
+    </script>
+</body>
+</html>
