@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Store</title>
+    <link rel="stylesheet" href="Soccer Store 2.css">
+</head>
+<body>
+    <header>
+        <h1>Soccer Store ⚽</h1>
+        <nav>
+            <ul>        
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Seção principal do site</h2>
+            <p> Seja bem-vindo a nosso site!</p>
+        </section>
+
+        <section>
+            <h2>Camisas de Times</h2>
+            <p>Logo abaixo estão algumas camisas disponíveis:</p>
+              <div class="carrossel">
+                <img src="Foto1.webp" class="ativa">
+                <img src="Foto2.jpg">
+                <img src="Foto3.webp">
+            </div>
+            <div class="Botoes">
+                <button onclick="anterior()">Anterior</button>
+                <button onclick="proximo()">Próximo</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Modelos disponíveis</h2>
+            <ul>
+                <li>Camisa Atlético-Mineiro</li>
+                <li>Camisa Barcelona</li>
+                <li>Camisa Real Madrid</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Detalhes das Camisas</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Modelo</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Atlético-Mineiro</td>
+                        <td>Adidas 2025</td>
+                        <td>R$ 249,90</td>
+                    </tr>
+                    <tr>
+                        <td>Real Madrid</td>
+                        <td>Adidas 2024</td>
+                        <td>R$ 299,90</td>
+                    </tr>
+                    <tr>
+                        <td>Barcelona</td>
+                        <td>Nike 2024</td>
+                        <td>R$ 289,90</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section> 
+            <h2>Descrição</h2>
+            <p>
+                As camisas de time disponíveis representam grandes clubes do futebol mundial.
+                A camisa do Clube Atlético Mineiro destaca tradição e paixão da torcida brasileira,
+                enquanto a do Real Madrid simboliza conquistas históricas e elegância no futebol europeu.
+                Já a camisa do Barcelona representa um estilo de jogo ofensivo e uma identidade marcante. 
+                Faça a sua escolha!
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contato: (31) 97674-5392</p>
+        <p>&copy; Todos os serviços reservados</p>
+    </footer>
+
+    <script>
+    let indice = 0;
+         const imagens = document.querySelectorAll(".carrossel img");
+
+    function mostrarImagem(tela) {
+    imagens.forEach((img) => img.classList.remove("ativa"));
+    imagens[tela].classList.add("ativa");
+}
+
+    function proximo() {
+    indice = (indice + 1) % imagens.length;
+    mostrarImagem(indice);
+}
+
+    function anterior() {
+    indice = (indice - 1 + imagens.length) % imagens.length;
+    mostrarImagem(indice);
+}
+    </script>
+
+</body>
+</html> 
