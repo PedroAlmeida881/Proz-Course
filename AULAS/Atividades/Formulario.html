@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario</title>
+
+<style>
+body {
+    background-color: #d6d2b5; /* fundo bege */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 420px;
+    padding: 30px 40px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.radio-group label {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5aa05a; /* verde */
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #4a8c4a;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+<h1 id="Titulo">Cadastro</h1>
+
+<form id="formCadastro">
+
+Nome:
+<input type="text" name="nome" id="txtNome" required>
+
+Data de Nascimento:
+<input type="date" min="1950-01-01" name="nascimento" max="2020-12-31" required>
+
+Email:
+<input type="email" required multiple>
+
+Senha:
+<input type="password" name="senha" required>
+
+Gênero:
+<div class="radio-group">
+    <label>
+        <input type="radio" name="genero" value="Masculino" required>
+        Masculino
+    </label>
+    <label>
+        <input type="radio" name="genero" value="Feminino" required>
+        Feminino
+    </label>
+</div>
+Curso:
+<select name="cursos" required>
+<option value="">Selecione</option>
+<option>Desenvolvimento de Sistemas</option>
+<option>Informática</option>
+<option>Redes</option>
+</select>
+
+<button type="submit">Enviar</button>
+
+</form>
+<script>
+document.getElementById("formCadastro").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    alert("Cadastro realizado com sucesso! ✅");
+});
+</script>
+</body>
+</html>
