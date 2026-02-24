@@ -1,0 +1,256 @@
+/* ============================= */
+/* RESET */
+/* ============================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/* BODY */
+/* ============================= */
+body{
+    background-color: #000000; /* fundo preto do site */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000; /* texto padrão preto nas seções brancas */
+    line-height: 1.6;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+header{
+    background: linear-gradient(to bottom, #c31432, #000000); /* vermelho degradê */
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 0 15px #e10600; /* destaque vermelho */
+}
+
+header h1{
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+header p{
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* ============================= */
+/* NAVEGAÇÃO */
+/* ============================= */
+nav{
+    margin-top: 10px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 8px 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    background-color: #8b0000; /* vermelho escuro */
+    color: #ffffff;
+    transform: scale(1.05);
+    border-radius: 5px;
+}
+
+/* ============================= */
+/* SEÇÕES */
+/* ============================= */
+section{
+    background-color: #ffffff; /* fundo branco */
+    color: #000000; /* texto preto */
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(225, 0, 0, 0.5); /* margem/vermelho em destaque */
+}
+
+/* ============================= */
+/* TÍTULOS */
+/* ============================= */
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000; /* vermelho */
+}
+
+/* ============================= */
+/* ARTIGOS */
+/* ============================= */
+article{
+    background-color: #ffffff; /* branco */
+    color: #000000; /* texto preto */
+    padding: 20px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(225,0,0,0.3); /* destaque vermelho */
+    transition: 0.3s;
+}
+
+article:hover{
+    transform: scale(1.02);
+}
+
+/* ============================= */
+/* PARÁGRAFOS */
+/* ============================= */
+p{
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* ============================= */
+/* LISTAS */
+/* ============================= */
+ul{
+    list-style: none;
+}
+
+/* ============================= */
+/* CARROSSEL */
+/* ============================= */
+.carrossel{
+    width: 700px;
+    height: 500px;
+    margin: 40px auto 10px; 
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffffff; /* fundo branco */
+    box-shadow: 0 10px 25px rgba(225,0,0,0.5); /* margem/vermelho em destaque */
+}
+
+.carrossel img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.carrossel img.ativa{
+    display: block;
+}
+
+/* ============================= */
+/* BOTÕES */
+/* ============================= */
+.botoes{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.botoes button{
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #e10600; /* vermelho */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botoes button:hover{
+    background-color: #8b0000; /* vermelho escuro */
+    transform: scale(1.05);
+}
+
+/* ============================= */
+/* TABELA */
+/* ============================= */
+table{
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th{
+    background-color: #ffffff; /* branco */
+    padding: 12px;
+    color: #000000; /* preto */
+}
+
+table td{
+    background-color: #ffffff; /* branco */
+    padding: 12px;
+    color: #000000; /* preto */
+}
+
+table th, table td{
+    border: 2px solid #000000; /* destaque vermelho */
+    text-align: center;
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+    
+    background: linear-gradient(to bottom, #c31432, black);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 17px;
+  
+}
+
+footer h2{
+    font-size: 21px;
+    margin: 0;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    
+}
+
+footer a:hover {
+    text-decoration: underline;
+
+}
+
+footer:hover span{
+    color: #ffffff;
+    transition: 0.3s;
+}
+/* ============================= */
+/* RESPONSIVO */
+/* ============================= */
+@media (max-width: 768px){
+
+    .carrossel{
+        height: 250px;
+    }
+
+    table{
+        width: 100%;
+    }
+
+    section{
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header{
+        padding: 20px;
+    }
+}
