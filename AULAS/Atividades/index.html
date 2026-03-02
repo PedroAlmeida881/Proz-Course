@@ -1,24 +1,76 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Formulário Login</title>
+
+<style>
+    body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image: url('https://images.unsplash.com/photo-1508780709619-79562169bc64');
+    background-size: cover;
+    background-position: center;
+}
+
+.formulario {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transform: translateX(-400px);
+    animation: slideIn 3s forwards;
+}
+
+.formulario h1 {
+    text-align: center;
+}
+
+.formulario input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: #4102ff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #2d00b3;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+</style>
+
 </head>
-
 <body>
-    <div class="container">
-        <br>
-        <h1 id="msg">Será que você está cadastrado?</h1>
-        <input type="text" id="username" placeholder="Digite seu login">
-        <br>
-        <input type="password" id="senha" placeholder="Digite sua senha">
-        <br>
-        <button onclick="verifica()">Entrar</button>
-    </div>
-    <script src="Teste.js"></script>
+    <form class="formulario">
+        <h1>Login</h1>
+        <input type="text" placeholder="Usuário" required>
+        <input type="password" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
 </body>
-
 </html>
