@@ -1,0 +1,661 @@
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
+body {
+
+    /* Fundo da página */
+    background: #596464;
+
+    /* Fonte */
+    font-family:
+        'Segoe UI',
+        Tahoma,
+        Geneva,
+        Verdana,
+        sans-serif;
+
+    /* Tamanho do texto */
+    font-size: 18px;
+
+    /* Remove margem padrão */
+    margin: 0;
+
+    /* Espaçamento interno */
+    padding: 20px;
+
+}
+
+
+/* =========================================================
+   TÍTULO PRINCIPAL
+   ========================================================= */
+
+h2 {
+
+    /* Cor de fundo */
+    background: #26332F;
+
+    /* Cor do texto */
+    color: #FFFDF8;
+
+    /* Centraliza o texto */
+    text-align: center;
+
+    /* Espaçamento */
+    padding: 20px;
+
+    /* Bordas arredondadas */
+    border-radius: 10px;
+
+    /* Sombra */
+    box-shadow:
+        0 4px 6px rgba(22, 78, 69, 0.20);
+
+}
+
+
+/* =========================================================
+   BANNER
+   ========================================================= */
+
+#banner {
+
+    /* Largura total */
+    width: 100%;
+
+    /* Altura automática */
+    height: auto;
+
+    /* Bordas arredondadas */
+    border-radius: 15px;
+
+    /* Espaço inferior */
+    margin-bottom: 20px;
+
+    /* Mantém a imagem proporcional */
+    display: block;
+
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+   ========================================================= */
+
+.conteudo {
+
+    /* Fundo branco */
+    background: #fffefc;
+
+    /* Espaçamento */
+    padding: 20px;
+
+    /* Bordas arredondadas */
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu {
+
+    /* Fundo */
+    background: #26332F;
+
+    /* Espaçamento */
+    padding: 15px;
+
+    /* Remove marcadores */
+    list-style: none;
+
+    /* Alinhamento */
+    text-align: left;
+
+    /* Bordas */
+    border-radius: 5px;
+
+}
+
+
+/* Itens do menu */
+
+.menu li {
+
+    /* Deixa os itens em linha */
+    display: inline;
+
+    /* Espaço entre os itens */
+    margin-right: 25px;
+
+}
+
+
+/* Links do menu */
+
+.menu li a {
+
+    /* Cor */
+    color: #E6C875;
+
+    /* Remove sublinhado */
+    text-decoration: none;
+
+    /* Letras maiúsculas */
+    text-transform: uppercase;
+
+    /* Negrito */
+    font-weight: bold;
+
+    /* Tamanho */
+    font-size: 20px;
+
+}
+
+
+/* Efeito ao passar o mouse */
+
+.menu li a:hover {
+
+    /* Cor */
+    color: #FFFDF8;
+
+    /* Linha inferior */
+    border-bottom: 2px solid #C49A3A;
+
+}
+
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
+fieldset {
+
+    /* Borda */
+    border: 3px solid #C49A3A;
+
+    /* Arredondamento */
+    border-radius: 15px;
+
+    /* Fundo */
+    background: #FFFDF8;
+
+    /* Espaçamento */
+    padding: 25px;
+
+}
+
+
+/* Título do formulário */
+
+legend {
+
+    /* Negrito */
+    font-weight: bold;
+
+    /* Espaçamento */
+    padding: 0 10px;
+
+    /* Cor */
+    color: #164E45;
+
+}
+
+
+/* =========================================================
+   CAMPOS DO FORMULÁRIO
+   ========================================================= */
+
+#nome {
+
+    /* Largura */
+    width: 95%;
+
+    /* Espaçamento */
+    padding: 12px;
+
+    /* Tamanho */
+    font-size: 18px;
+
+    /* Borda */
+    border: 1px solid #D6D3CD;
+
+    /* Arredondamento */
+    border-radius: 5px;
+
+}
+
+
+/* Select */
+
+select {
+
+    /* Espaçamento */
+    padding: 10px;
+
+    /* Tamanho */
+    font-size: 17px;
+
+    /* Borda */
+    border: 1px solid #D6D3CD;
+
+    /* Arredondamento */
+    border-radius: 5px;
+
+}
+
+
+/* Data e horário */
+
+input[type="date"],
+input[type="time"] {
+
+    /* Espaçamento */
+    padding: 10px;
+
+    /* Tamanho */
+    font-size: 17px;
+
+    /* Borda */
+    border: 1px solid #D6D3CD;
+
+    /* Arredondamento */
+    border-radius: 5px;
+
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.botao {
+
+    /* Espaçamento superior */
+    margin-top: 15px;
+
+    /* Espaçamento interno */
+    padding: 10px 20px;
+
+    /* Fundo */
+    background: #287C6E;
+
+    /* Texto */
+    color: #FFFDF8;
+
+    /* Remove borda */
+    border: none;
+
+    /* Arredondamento */
+    border-radius: 5px;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Tamanho */
+    font-size: 16px;
+
+    /* Negrito */
+    font-weight: bold;
+
+    /* Transição */
+    transition: background 0.2s ease;
+
+}
+
+
+/* Efeito hover */
+
+.botao:hover {
+
+    /* Fundo mais escuro */
+    background: #164E45;
+
+}
+
+
+/* =========================================================
+   BOTÃO DE CANCELAMENTO
+   ========================================================= */
+
+.botao-cancelar {
+
+    /*
+        Cor diferente para indicar que esta ação
+        cancela/apaga o agendamento.
+    */
+    background: #A63D40;
+
+    /* Espaço entre os botões */
+    margin-left: 10px;
+
+}
+
+
+/* Hover do botão de cancelamento */
+
+.botao-cancelar:hover {
+
+    background: #7F2D30;
+
+}
+
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+#rodape {
+
+    /* Centralização */
+    text-align: center;
+
+    /* Espaço superior */
+    margin-top: 30px;
+
+    /* Tamanho */
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   TABELA DE HORÁRIOS
+   ========================================================= */
+
+.tabela-horario {
+
+    /* Centraliza */
+    margin: 40px auto;
+
+    /* Junta as bordas */
+    border-collapse: collapse;
+
+    /* Largura */
+    width: 70%;
+
+    /* Fonte */
+    font-family: Arial, sans-serif;
+
+    /* Tamanho */
+    font-size: 20px;
+
+    /* Sombra */
+    box-shadow:
+        0 4px 12px rgba(22, 78, 69, 0.18);
+
+    /* Fundo */
+    background-color: #FFFDF8;
+
+}
+
+
+/* Cabeçalho da tabela */
+
+.tabela-horario th {
+
+    /* Fundo */
+    background-color: #164E45;
+
+    /* Texto */
+    color: #E6C875;
+
+    /* Espaçamento */
+    padding: 14px;
+
+    /* Centralização */
+    text-align: center;
+
+}
+
+
+/* Células */
+
+.tabela-horario td {
+
+    /* Espaçamento */
+    padding: 12px;
+
+    /* Centralização */
+    text-align: center;
+
+    /* Borda */
+    border: 1px solid #D6D3CD;
+
+}
+
+
+/* Linhas pares */
+
+.tabela-horario tr:nth-child(even) {
+
+    background-color: #F5F1E8;
+
+}
+
+
+/* =========================================================
+   COMPROVANTE
+   ========================================================= */
+
+.comprovante {
+
+    /* Borda */
+    border: 2px solid #C49A3A;
+
+    /* Espaçamento */
+    padding: 25px;
+
+    /* Espaço superior */
+    margin: 20px auto;
+
+    /* Fundo */
+    background: #FFFDF8;
+
+    /* Bordas arredondadas */
+    border-radius: 10px;
+
+    /* Sombra */
+    box-shadow:
+        0 4px 8px rgba(22, 78, 69, 0.15);
+
+    /* Largura máxima */
+    max-width: 800px;
+
+}
+
+
+/* =========================================================
+   TÍTULO DO COMPROVANTE
+   ========================================================= */
+
+.titulo-comprovante {
+
+    /* Cor */
+    color: #164E45;
+
+    /* Remove margem superior */
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   LINK DE VOLTAR
+   ========================================================= */
+
+.link-voltar {
+
+    /* Cor */
+    color: #287C6E;
+
+    /* Negrito */
+    font-weight: bold;
+
+    /* Remove sublinhado */
+    text-decoration: none;
+
+}
+
+
+/* Hover */
+
+.link-voltar:hover {
+
+    color: #164E45;
+
+    text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   ÁREA DE RESULTADO DO FORMULÁRIO
+   ========================================================= */
+
+.resultado-formulario {
+
+    /* Espaço superior */
+    margin-top: 20px;
+
+    /* Altura mínima */
+    min-height: 50px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+
+        /* Reduz o espaçamento em telas menores */
+        padding: 10px;
+
+        /* Reduz o tamanho da fonte */
+        font-size: 16px;
+
+    }
+
+
+    h2 {
+
+        /* Reduz o tamanho do título */
+        font-size: 24px;
+
+        /* Reduz o espaçamento */
+        padding: 15px;
+
+    }
+
+
+    .menu li {
+
+        /* Faz cada item ocupar sua própria linha */
+        display: block;
+
+        /* Espaçamento */
+        margin: 10px 0;
+
+    }
+
+
+    .menu li a {
+
+        /* Tamanho menor */
+        font-size: 17px;
+
+    }
+
+
+    .tabela-horario {
+
+        /* Ocupa praticamente toda a tela */
+        width: 100%;
+
+        /* Reduz o tamanho */
+        font-size: 14px;
+
+    }
+
+
+    .tabela-horario th,
+    .tabela-horario td {
+
+        /* Reduz o espaçamento */
+        padding: 8px;
+
+    }
+
+
+    .comprovante {
+
+        /* Reduz o espaçamento */
+        padding: 15px;
+
+    }
+
+
+    .botao {
+
+        /* Faz os botões ocuparem uma largura maior */
+        margin-left: 0;
+
+        /* Espaçamento */
+        margin-right: 5px;
+
+        margin-bottom: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CONFIGURAÇÃO PARA IMPRESSÃO
+   ========================================================= */
+
+@media print {
+
+    /*
+        Na impressão, escondemos os botões e o link,
+        deixando somente as informações do comprovante.
+    */
+
+    .botao,
+    .link-voltar {
+
+        display: none;
+
+    }
+
+
+    body {
+
+        /* Fundo branco na impressão */
+        background: #fffefe;
+
+        /* Remove espaçamento */
+        padding: 0;
+
+    }
+
+
+    .comprovante {
+
+        /* Remove sombra */
+        box-shadow: none;
+
+        /* Mantém a borda */
+        border: 1px solid #26332F;
+
+    }
+
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Agendamento</title>
+
+   <link rel="stylesheet" href="salao.css">
+   <script src="salao.js" defer></script>
+
+</head>
+
+<body>
+
+    <h2>AGENDAMENTO</h2>
+
+    <ul class="menu">
+
+        <li>
+            <a href="index.html">PÁGINA INICIAL</a>
+        </li>
+
+    </ul>
+
+
+    <fieldset>
+
+        <legend>
+            <strong>DADOS DO AGENDAMENTO</strong>
+        </legend>
+
+        
+        <form
+            onsubmit="return cadastrarAgendamento();"
+        >
+
+            <label for="nome">
+                <strong>Nome do Cliente:</strong>
+            </label>
+
+            <br>
+
+            <input
+                type="text"
+                id="nome"
+                required
+                maxlength="100"
+            >
+
+            <br><br>
+
+            <label for="profissional">
+                <strong>Profissional Preferido:</strong>
+            </label>
+
+            <br>
+
+            <select id="profissional">
+
+                <option value="Carlos (Cabeleireiro)">
+                    Carlos (Cabeleireiro)
+                </option>
+
+                <option value="Mariana (Cabeleireira)">
+                    Mariana (Cabeleireira)
+                </option>
+
+                <option value="Roberto (Barbeiro)">
+                    Roberto (Barbeiro)
+                </option>
+
+                <option value="Ana (Esteticista)">
+                    Ana (Esteticista)
+                </option>
+
+                <option value="Indiferente">
+                    Indiferente
+                </option>
+
+            </select>
+
+            <br><br>
+
+
+            <label>
+                <strong>Sexo:</strong>
+            </label>
+
+            <br>
+
+            <input
+                type="radio"
+                id="masculino"
+                name="sexo"
+                value="Masculino"
+                required
+            >
+
+            <label for="masculino">
+                Masculino
+            </label>
+
+
+            <input
+                type="radio"
+                id="feminino"
+                name="sexo"
+                value="Feminino"
+            >
+
+            <label for="feminino">
+                Feminino
+            </label>
+
+            <br><br>
+
+
+            <label>
+                <strong>Serviços Desejados:</strong>
+            </label>
+
+            <br>
+
+
+            <input
+                type="checkbox"
+                class="serv"
+                id="corte"
+                value="Corte"
+            >
+
+            <label for="corte">
+                Corte de Cabelo
+            </label>
+
+
+            <input
+                type="checkbox"
+                class="serv"
+                id="barba"
+                value="Barba"
+            >
+
+            <label for="barba">
+                Barba
+            </label>
+
+
+            <input
+                type="checkbox"
+                class="serv"
+                id="coloracao"
+                value="Coloração"
+            >
+
+            <label for="coloracao">
+                Coloração
+            </label>
+
+
+            <input
+                type="checkbox"
+                class="serv"
+                id="escova"
+                value="Escova / Hidratação"
+            >
+
+            <label for="escova">
+                Escova / Hidratação
+            </label>
+
+
+            <input
+                type="checkbox"
+                class="serv"
+                id="manicure"
+                value="Manicure"
+            >
+
+            <label for="manicure">
+                Manicure
+            </label>
+
+            <br><br>
+
+
+            <label for="data">
+                <strong>Data do Atendimento:</strong>
+            </label>
+
+            <br>
+
+            <input
+                type="date"
+                id="data"
+                required
+            >
+
+            <br><br>
+
+
+            <label for="horario">
+                <strong>Horário:</strong>
+            </label>
+
+            <br>
+
+            <input
+                type="time"
+                id="horario"
+                required
+            >
+
+            <br><br>
+
+            <input
+                class="botao"
+                type="submit"
+                value="CONFIRMAR AGENDAMENTO"
+            >
+
+        </form>
+
+    </fieldset>
+
+
+    <div
+        id="resultado"
+        class="resultado-formulario"
+    ></div>
+
+</body>
+
+</html>

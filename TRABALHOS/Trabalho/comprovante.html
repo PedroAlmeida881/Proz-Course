@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Comprovante de Agendamento</title>
+
+  <link rel="stylesheet" href="salao.css">
+  <script src="salao.js" defer></script>
+   
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+
+    <script>
+
+        let nomeCliente =
+            sessionStorage.getItem("nomeCliente") ||
+            "Não informado";
+
+
+        let profissional =
+            sessionStorage.getItem("profissional") ||
+            "Não informado";
+
+
+        let sexoCliente =
+            sessionStorage.getItem("sexoCliente") ||
+            "Não informado";
+
+
+        let listaServicos =
+            sessionStorage.getItem("listaServicos") ||
+            "Nenhum";
+
+
+        let dataAtendimento =
+            sessionStorage.getItem("data") ||
+            "Não informada";
+
+
+        let horarioAtendimento =
+            sessionStorage.getItem("horario") ||
+            "Não informado";
+
+
+        let areaResultado =
+            document.getElementById("resultado");
+
+
+
+        areaResultado.innerHTML = `
+
+            <div class="comprovante">
+
+                <h3 class="titulo-comprovante">
+                    COMPROVANTE DE AGENDAMENTO - SALÃO
+                </h3>
+
+                <hr>
+
+
+                <p>
+                    <strong>Cliente:</strong>
+                    ${nomeCliente}
+                </p>
+
+
+                <p>
+                    <strong>Profissional:</strong>
+                    ${profissional}
+                </p>
+
+
+                <p>
+                    <strong>Sexo:</strong>
+                    ${sexoCliente}
+                </p>
+
+
+                <p>
+                    <strong>Serviços:</strong>
+                    ${listaServicos}
+                </p>
+
+
+                <p>
+                    <strong>Data do Atendimento:</strong>
+                    ${dataAtendimento}
+                </p>
+
+
+                <p>
+                    <strong>Horário:</strong>
+                    ${horarioAtendimento}
+                </p>
+
+
+                <!-- =================================================
+                     BOTÃO DE IMPRESSÃO
+                     ================================================= -->
+
+                <button
+                    onclick="window.print()"
+                    class="botao"
+                    type="button"
+                >
+                    IMPRIMIR COMPROVANTE
+                </button>
+
+
+                <!-- =================================================
+                     NOVO BOTÃO DE CANCELAMENTO
+                     ================================================= -->
+
+                <button
+                    onclick="cancelarAgendamento()"
+                    class="botao botao-cancelar"
+                    type="button"
+                >
+                    CANCELAR AGENDAMENTO
+                </button>
+
+
+                <br><br>
+
+
+                <!-- Voltar para o cadastro -->
+
+                <a
+                    href="cadastro_agendamento.html"
+                    class="link-voltar"
+                >
+                    ← VOLTAR PARA O CADASTRO
+                </a>
+
+            </div>
+
+        `;
+
+    </script>
+
+</body>
+
+</html>
