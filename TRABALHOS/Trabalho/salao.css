@@ -2,10 +2,31 @@
    CONFIGURAÇÕES GERAIS
    ========================================================= */
 
+* {
+
+    /* Faz padding e border fazerem parte do tamanho */
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    /* Rolagem suave entre as seções */
+    scroll-behavior: smooth;
+
+}
+
+
 body {
 
     /* Fundo da página */
-    background: #596464;
+    background: linear-gradient(
+        135deg,
+        #596464,
+        #465353,
+        #596464
+    );
 
     /* Fonte */
     font-family:
@@ -24,6 +45,154 @@ body {
     /* Espaçamento interno */
     padding: 20px;
 
+    /* Cor padrão */
+    color: #26332F;
+
+    /* Altura mínima */
+    min-height: 100vh;
+
+    /* Evita vazamento horizontal */
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES GERAIS
+   ========================================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes aparecerTitulo {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-25px) scale(0.97);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+
+    }
+
+}
+
+
+@keyframes entradaLateral {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateX(-30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+}
+
+
+@keyframes brilho {
+
+    0% {
+
+        box-shadow:
+            0 4px 6px rgba(22, 78, 69, 0.20);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 8px 25px rgba(196, 154, 58, 0.35);
+
+    }
+
+    100% {
+
+        box-shadow:
+            0 4px 6px rgba(22, 78, 69, 0.20);
+
+    }
+
+}
+
+
+@keyframes flutuar {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-4px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+@keyframes pulsar {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.02);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
 }
 
 
@@ -34,7 +203,12 @@ body {
 h2 {
 
     /* Cor de fundo */
-    background: #26332F;
+    background: linear-gradient(
+        135deg,
+        #26332F,
+        #164E45,
+        #26332F
+    );
 
     /* Cor do texto */
     color: #FFFDF8;
@@ -51,6 +225,85 @@ h2 {
     /* Sombra */
     box-shadow:
         0 4px 6px rgba(22, 78, 69, 0.20);
+
+    /* Animação de entrada */
+    animation:
+        aparecerTitulo 0.8s ease-out,
+        brilho 4s ease-in-out infinite;
+
+    /* Transição */
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    /* Posicionamento */
+    position: relative;
+
+    /* Evita problemas com overflow */
+    overflow: hidden;
+
+}
+
+
+/* Efeito de brilho do título */
+
+h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 50%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.18),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    animation: passarBrilho 5s ease-in-out infinite;
+
+}
+
+
+@keyframes passarBrilho {
+
+    0% {
+
+        left: -100%;
+
+    }
+
+    35% {
+
+        left: 130%;
+
+    }
+
+    100% {
+
+        left: 130%;
+
+    }
+
+}
+
+
+h2:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(22, 78, 69, 0.35);
 
 }
 
@@ -76,6 +329,36 @@ h2 {
     /* Mantém a imagem proporcional */
     display: block;
 
+    /* Evita imagem quebrando o layout */
+    max-width: 100%;
+
+    /* Animação */
+    animation: aparecer 1s ease-out;
+
+    /* Transição */
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        filter 0.5s ease;
+
+    /* Sombra */
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.20);
+
+}
+
+
+/* Efeito no banner */
+
+#banner:hover {
+
+    transform: scale(1.015);
+
+    filter: brightness(1.05);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.30);
+
 }
 
 
@@ -94,6 +377,132 @@ h2 {
     /* Bordas arredondadas */
     border-radius: 10px;
 
+    /* Animação */
+    animation: aparecer 0.9s ease-out;
+
+    /* Sombra */
+    box-shadow:
+        0 6px 18px rgba(22, 78, 69, 0.18);
+
+    /* Transição */
+    transition:
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+
+}
+
+
+/* Efeito do conteúdo */
+
+.conteudo:hover {
+
+    box-shadow:
+        0 10px 30px rgba(22, 78, 69, 0.24);
+
+}
+
+
+/* =========================================================
+   TÍTULOS DAS SEÇÕES
+   ========================================================= */
+
+.conteudo h3 {
+
+    /* Cor */
+    color: #164E45;
+
+    /* Espaçamento */
+    padding: 10px 12px;
+
+    /* Borda esquerda */
+    border-left: 5px solid #C49A3A;
+
+    /* Fundo suave */
+    background:
+        linear-gradient(
+            90deg,
+            #F5F1E8,
+            transparent
+        );
+
+    /* Arredondamento */
+    border-radius: 4px;
+
+    /* Animação */
+    animation: entradaLateral 0.7s ease-out;
+
+    /* Transição */
+    transition:
+        padding-left 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.conteudo h3:hover {
+
+    padding-left: 20px;
+
+    color: #287C6E;
+
+    border-color: #164E45;
+
+}
+
+
+/* =========================================================
+   PARÁGRAFOS
+   ========================================================= */
+
+.conteudo p {
+
+    /* Espaçamento */
+    line-height: 1.7;
+
+    /* Transição */
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+.conteudo p:hover {
+
+    transform: translateX(5px);
+
+    color: #164E45;
+
+}
+
+
+/* =========================================================
+   LISTA DE SERVIÇOS
+   ========================================================= */
+
+.conteudo > ul li {
+
+    /* Espaçamento */
+    margin-bottom: 10px;
+
+    /* Transição */
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        padding-left 0.3s ease;
+
+}
+
+
+.conteudo > ul li:hover {
+
+    transform: translateX(8px);
+
+    padding-left: 5px;
+
+    color: #287C6E;
+
 }
 
 
@@ -104,7 +513,11 @@ h2 {
 .menu {
 
     /* Fundo */
-    background: #26332F;
+    background: linear-gradient(
+        135deg,
+        #26332F,
+        #164E45
+    );
 
     /* Espaçamento */
     padding: 15px;
@@ -117,6 +530,16 @@ h2 {
 
     /* Bordas */
     border-radius: 5px;
+
+    /* Animação */
+    animation: aparecer 0.7s ease-out;
+
+    /* Sombra */
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.18);
+
+    /* Evita conteúdo saindo */
+    overflow: hidden;
 
 }
 
@@ -153,6 +576,37 @@ h2 {
     /* Tamanho */
     font-size: 20px;
 
+    /* Posicionamento */
+    position: relative;
+
+    /* Transição */
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* Linha animada do menu */
+
+.menu li a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #E6C875;
+
+    transition: width 0.3s ease;
+
 }
 
 
@@ -163,14 +617,23 @@ h2 {
     /* Cor */
     color: #FFFDF8;
 
-    /* Linha inferior */
-    border-bottom: 2px solid #C49A3A;
+    /* Movimento */
+    transform: translateY(-2px);
+
+}
+
+
+/* Linha do menu */
+
+.menu li a:hover::after {
+
+    width: 100%;
 
 }
 
 
 /* =========================================================
-   FORMULÁRIO
+   FIELDSET - FORMULÁRIO
    ========================================================= */
 
 fieldset {
@@ -182,26 +645,114 @@ fieldset {
     border-radius: 15px;
 
     /* Fundo */
-    background: #FFFDF8;
+    background:
+        linear-gradient(
+            145deg,
+            #FFFDF8,
+            #F8F5ED
+        );
 
     /* Espaçamento */
-    padding: 25px;
+    padding: 35px 25px 25px 25px;
+
+    /* Animação */
+    animation: aparecer 0.8s ease-out;
+
+    /* Sombra */
+    box-shadow:
+        0 8px 25px rgba(22, 78, 69, 0.18);
+
+    /* Transição */
+    transition:
+        box-shadow 0.4s ease,
+        transform 0.4s ease;
+
+    /* Largura */
+    width: 100%;
+
+    /* Altura */
+    min-width: 0;
 
 }
 
 
-/* Título do formulário */
+/* Efeito do formulário */
+
+fieldset:hover {
+
+    box-shadow:
+        0 12px 35px rgba(22, 78, 69, 0.25);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   TÍTULO DO FORMULÁRIO
+   ========================================================= */
 
 legend {
 
     /* Negrito */
     font-weight: bold;
 
-    /* Espaçamento */
-    padding: 0 10px;
+    /* Espaçamento horizontal */
+    padding: 8px 15px;
 
     /* Cor */
     color: #164E45;
+
+    /* Fundo */
+    background: #FFFDF8;
+
+    /* Borda */
+    border: 2px solid #C49A3A;
+
+    /* Arredondamento */
+    border-radius: 8px;
+
+    /* Tamanho */
+    font-size: 20px;
+
+    /* Evita corte do texto */
+    white-space: normal;
+
+    /* Permite quebra */
+    max-width: 100%;
+
+    /* Largura automática */
+    width: auto;
+
+    /* Exibição */
+    display: table;
+
+    /* Sombra */
+    box-shadow:
+        0 3px 8px rgba(22, 78, 69, 0.12);
+
+    /* Animação */
+    animation: pulsar 3s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   LABELS DO FORMULÁRIO
+   ========================================================= */
+
+fieldset label {
+
+    /* Transição */
+    transition:
+        color 0.3s ease;
+
+}
+
+
+fieldset label:hover {
+
+    color: #287C6E;
 
 }
 
@@ -227,6 +778,28 @@ legend {
     /* Arredondamento */
     border-radius: 5px;
 
+    /* Transição */
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* Foco do nome */
+
+#nome:focus {
+
+    outline: none;
+
+    border-color: #287C6E;
+
+    box-shadow:
+        0 0 0 3px rgba(40, 124, 110, 0.15);
+
+    transform: translateY(-2px);
+
 }
 
 
@@ -245,6 +818,29 @@ select {
 
     /* Arredondamento */
     border-radius: 5px;
+
+    /* Largura máxima */
+    max-width: 100%;
+
+    /* Transição */
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+select:focus {
+
+    outline: none;
+
+    border-color: #287C6E;
+
+    box-shadow:
+        0 0 0 3px rgba(40, 124, 110, 0.15);
+
+    transform: translateY(-2px);
 
 }
 
@@ -266,6 +862,52 @@ input[type="time"] {
     /* Arredondamento */
     border-radius: 5px;
 
+    /* Transição */
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+
+    outline: none;
+
+    border-color: #287C6E;
+
+    box-shadow:
+        0 0 0 3px rgba(40, 124, 110, 0.15);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   CHECKBOXES E RADIO BUTTONS
+   ========================================================= */
+
+input[type="checkbox"],
+input[type="radio"] {
+
+    /* Cor dos controles */
+    accent-color: #287C6E;
+
+    /* Transição */
+    transition:
+        transform 0.2s ease;
+
+}
+
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+
+    transform: scale(1.15);
+
 }
 
 
@@ -282,7 +924,11 @@ input[type="time"] {
     padding: 10px 20px;
 
     /* Fundo */
-    background: #287C6E;
+    background: linear-gradient(
+        135deg,
+        #287C6E,
+        #164E45
+    );
 
     /* Texto */
     color: #FFFDF8;
@@ -303,7 +949,14 @@ input[type="time"] {
     font-weight: bold;
 
     /* Transição */
-    transition: background 0.2s ease;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    /* Sombra */
+    box-shadow:
+        0 4px 10px rgba(22, 78, 69, 0.20);
 
 }
 
@@ -313,7 +966,30 @@ input[type="time"] {
 .botao:hover {
 
     /* Fundo mais escuro */
-    background: #164E45;
+    background: linear-gradient(
+        135deg,
+        #164E45,
+        #287C6E
+    );
+
+    /* Movimento */
+    transform: translateY(-3px) scale(1.02);
+
+    /* Sombra */
+    box-shadow:
+        0 8px 18px rgba(22, 78, 69, 0.30);
+
+}
+
+
+/* Efeito ao clicar */
+
+.botao:active {
+
+    transform: translateY(1px) scale(0.98);
+
+    box-shadow:
+        0 3px 7px rgba(22, 78, 69, 0.20);
 
 }
 
@@ -328,7 +1004,12 @@ input[type="time"] {
         Cor diferente para indicar que esta ação
         cancela/apaga o agendamento.
     */
-    background: #A63D40;
+
+    background: linear-gradient(
+        135deg,
+        #A63D40,
+        #7F2D30
+    );
 
     /* Espaço entre os botões */
     margin-left: 10px;
@@ -340,7 +1021,14 @@ input[type="time"] {
 
 .botao-cancelar:hover {
 
-    background: #7F2D30;
+    background: linear-gradient(
+        135deg,
+        #7F2D30,
+        #A63D40
+    );
+
+    box-shadow:
+        0 8px 18px rgba(166, 61, 64, 0.30);
 
 }
 
@@ -359,6 +1047,30 @@ input[type="time"] {
 
     /* Tamanho */
     font-size: 14px;
+
+    /* Cor */
+    color: #FFFDF8;
+
+    /* Animação */
+    animation: aparecer 1s ease-out;
+
+}
+
+
+#rodape p {
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+#rodape p:hover {
+
+    color: #E6C875;
+
+    transform: translateY(-2px);
 
 }
 
@@ -391,6 +1103,21 @@ input[type="time"] {
     /* Fundo */
     background-color: #FFFDF8;
 
+    /* Animação */
+    animation: aparecer 0.9s ease-out;
+
+    /* Transição */
+    transition:
+        box-shadow 0.4s ease;
+
+}
+
+
+.tabela-horario:hover {
+
+    box-shadow:
+        0 10px 25px rgba(22, 78, 69, 0.28);
+
 }
 
 
@@ -399,7 +1126,12 @@ input[type="time"] {
 .tabela-horario th {
 
     /* Fundo */
-    background-color: #164E45;
+    background:
+        linear-gradient(
+            135deg,
+            #164E45,
+            #287C6E
+        );
 
     /* Texto */
     color: #E6C875;
@@ -426,6 +1158,12 @@ input[type="time"] {
     /* Borda */
     border: 1px solid #D6D3CD;
 
+    /* Transição */
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+
 }
 
 
@@ -434,6 +1172,17 @@ input[type="time"] {
 .tabela-horario tr:nth-child(even) {
 
     background-color: #F5F1E8;
+
+}
+
+
+/* Hover nas linhas */
+
+.tabela-horario tr:hover td {
+
+    background-color: #E8F2EF;
+
+    color: #164E45;
 
 }
 
@@ -454,7 +1203,12 @@ input[type="time"] {
     margin: 20px auto;
 
     /* Fundo */
-    background: #FFFDF8;
+    background:
+        linear-gradient(
+            145deg,
+            #FFFDF8,
+            #F8F5ED
+        );
 
     /* Bordas arredondadas */
     border-radius: 10px;
@@ -465,6 +1219,59 @@ input[type="time"] {
 
     /* Largura máxima */
     max-width: 800px;
+
+    /* Largura */
+    width: 100%;
+
+    /* Animação */
+    animation:
+        aparecer 0.8s ease-out;
+
+    /* Transição */
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+/* Hover no comprovante */
+
+.comprovante:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(22, 78, 69, 0.25);
+
+}
+
+
+/* =========================================================
+   TEXTO DO COMPROVANTE
+   ========================================================= */
+
+.comprovante p {
+
+    /* Espaçamento */
+    padding: 10px;
+
+    /* Borda inferior */
+    border-bottom: 1px solid #E3DED2;
+
+    /* Transição */
+    transition:
+        background 0.3s ease,
+        padding-left 0.3s ease;
+
+}
+
+
+.comprovante p:hover {
+
+    background: #F5F1E8;
+
+    padding-left: 15px;
 
 }
 
@@ -480,6 +1287,29 @@ input[type="time"] {
 
     /* Remove margem superior */
     margin-top: 0;
+
+    /* Animação */
+    animation: entradaLateral 0.7s ease-out;
+
+}
+
+
+/* =========================================================
+   LINHA DO COMPROVANTE
+   ========================================================= */
+
+.comprovante hr {
+
+    border: none;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #C49A3A,
+            transparent
+        );
 
 }
 
@@ -499,6 +1329,11 @@ input[type="time"] {
     /* Remove sublinhado */
     text-decoration: none;
 
+    /* Transição */
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+
 }
 
 
@@ -509,6 +1344,8 @@ input[type="time"] {
     color: #164E45;
 
     text-decoration: underline;
+
+    padding-left: 5px;
 
 }
 
@@ -524,6 +1361,87 @@ input[type="time"] {
 
     /* Altura mínima */
     min-height: 50px;
+
+}
+
+
+/* =========================================================
+   INPUT DE TEXTO DO CONTATO
+   ========================================================= */
+
+#nome-contato,
+#email,
+#whatsapp,
+#mensagem {
+
+    /* Largura */
+    max-width: 100%;
+
+    /* Espaçamento */
+    padding: 10px;
+
+    /* Tamanho */
+    font-size: 17px;
+
+    /* Borda */
+    border: 1px solid #D6D3CD;
+
+    /* Arredondamento */
+    border-radius: 5px;
+
+    /* Transição */
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+#nome-contato:focus,
+#email:focus,
+#whatsapp:focus,
+#mensagem:focus {
+
+    outline: none;
+
+    border-color: #287C6E;
+
+    box-shadow:
+        0 0 0 3px rgba(40, 124, 110, 0.15);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+#mensagem {
+
+    /* Redimensionamento */
+    resize: vertical;
+
+    /* Largura */
+    width: 100%;
+
+    /* Largura máxima */
+    max-width: 600px;
+
+}
+
+
+/* =========================================================
+   SELEÇÃO DE TEXTO
+   ========================================================= */
+
+::selection {
+
+    background: #287C6E;
+
+    color: #FFFDF8;
 
 }
 
@@ -556,6 +1474,17 @@ input[type="time"] {
     }
 
 
+    .menu {
+
+        /* Centraliza */
+        text-align: center;
+
+        /* Espaçamento */
+        padding: 12px;
+
+    }
+
+
     .menu li {
 
         /* Faz cada item ocupar sua própria linha */
@@ -572,6 +1501,43 @@ input[type="time"] {
         /* Tamanho menor */
         font-size: 17px;
 
+        /* Exibição */
+        display: inline-block;
+
+    }
+
+
+    #banner {
+
+        /* Evita ultrapassar a tela */
+        width: 100%;
+
+        /* Remove aumento no mobile */
+        transform: none;
+
+    }
+
+
+    #banner:hover {
+
+        transform: none;
+
+    }
+
+
+    .conteudo {
+
+        /* Reduz espaçamento */
+        padding: 15px;
+
+    }
+
+
+    .conteudo h3 {
+
+        /* Tamanho */
+        font-size: 20px;
+
     }
 
 
@@ -583,6 +1549,12 @@ input[type="time"] {
         /* Reduz o tamanho */
         font-size: 14px;
 
+        /* Permite rolagem visual */
+        display: table;
+
+        /* Ajuste */
+        table-layout: fixed;
+
     }
 
 
@@ -592,6 +1564,70 @@ input[type="time"] {
         /* Reduz o espaçamento */
         padding: 8px;
 
+        /* Permite quebra */
+        word-wrap: break-word;
+
+        overflow-wrap: break-word;
+
+    }
+
+
+    fieldset {
+
+        /* Espaçamento */
+        padding: 30px 15px 20px 15px;
+
+        /* Evita ultrapassar */
+        width: 100%;
+
+    }
+
+
+    legend {
+
+        /* Tamanho */
+        font-size: 17px;
+
+        /* Espaçamento */
+        padding: 7px 10px;
+
+        /* Permite quebra */
+        white-space: normal;
+
+        /* Largura */
+        max-width: 90%;
+
+        /* Centralização */
+        margin-left: 5px;
+
+    }
+
+
+    #nome {
+
+        /* Ocupa toda a largura */
+        width: 100%;
+
+    }
+
+
+    select {
+
+        /* Largura */
+        width: 100%;
+
+    }
+
+
+    input[type="date"],
+    input[type="time"] {
+
+        /* Largura */
+        width: 100%;
+
+        /* Evita problemas */
+        max-width: 100%;
+
     }
 
 
@@ -599,6 +1635,20 @@ input[type="time"] {
 
         /* Reduz o espaçamento */
         padding: 15px;
+
+        /* Remove excesso */
+        margin: 10px auto;
+
+    }
+
+
+    .titulo-comprovante {
+
+        /* Tamanho */
+        font-size: 20px;
+
+        /* Quebra */
+        overflow-wrap: break-word;
 
     }
 
@@ -612,6 +1662,176 @@ input[type="time"] {
         margin-right: 5px;
 
         margin-bottom: 10px;
+
+        /* Largura */
+        max-width: 100%;
+
+    }
+
+
+    .botao-cancelar {
+
+        margin-left: 0;
+
+    }
+
+
+    #nome-contato,
+    #email,
+    #whatsapp,
+    #mensagem {
+
+        width: 100%;
+
+    }
+
+
+    #rodape {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE PARA CELULARES PEQUENOS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    body {
+
+        padding: 7px;
+
+        font-size: 15px;
+
+    }
+
+
+    h2 {
+
+        font-size: 20px;
+
+        padding: 13px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .menu {
+
+        padding: 10px;
+
+    }
+
+
+    .menu li {
+
+        margin: 8px 0;
+
+    }
+
+
+    .menu li a {
+
+        font-size: 15px;
+
+    }
+
+
+    .conteudo {
+
+        padding: 12px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .conteudo h3 {
+
+        font-size: 18px;
+
+    }
+
+
+    fieldset {
+
+        padding: 28px 10px 15px 10px;
+
+        border-width: 2px;
+
+    }
+
+
+    legend {
+
+        font-size: 15px;
+
+        padding: 6px 8px;
+
+        max-width: 95%;
+
+    }
+
+
+    .tabela-horario {
+
+        font-size: 11px;
+
+    }
+
+
+    .tabela-horario th,
+    .tabela-horario td {
+
+        padding: 5px;
+
+    }
+
+
+    .comprovante {
+
+        padding: 12px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .titulo-comprovante {
+
+        font-size: 17px;
+
+    }
+
+
+    .comprovante p {
+
+        font-size: 14px;
+
+    }
+
+
+    .botao {
+
+        width: 100%;
+
+        margin: 7px 0;
+
+        padding: 11px 10px;
+
+        font-size: 14px;
+
+    }
+
+
+    #rodape {
+
+        font-size: 11px;
 
     }
 
@@ -655,6 +1875,44 @@ input[type="time"] {
 
         /* Mantém a borda */
         border: 1px solid #26332F;
+
+        /* Remove animações */
+        animation: none;
+
+        /* Remove transformação */
+        transform: none;
+
+    }
+
+
+    .comprovante p {
+
+        background: transparent;
+
+        padding-left: 10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACESSIBILIDADE - REDUZIR ANIMAÇÕES
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
 
     }
 
